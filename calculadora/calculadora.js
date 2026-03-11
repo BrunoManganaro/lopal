@@ -13,7 +13,7 @@ function calculadora() {
         operando2 = parseFloat(prompt("Digite o segundo número: "));
         
 
-        if ( operador === "+" ) {
+        if (operador === "+") {
             resultado = operando1 + operando2;
         } else if (operador === "-") {
             resultado = operando1 - operando2;
@@ -23,32 +23,26 @@ function calculadora() {
             if (operando2 == 0) {
                 alert("Não é possível dividir por zero")
                 continua = prompt(
-                    "Digite sim para continuar e não para encerrar")
+                    "Digite sim para continuar e não para encerrar");
 
                 if (continua === "não") {
                 return //return força a parada de uma função
                 } 
-            
-                
-
-            
-    
             }
-        resultado = operando1 / operando2;
+            resultado = operando1 / operando2;
         } else {
             alert("Operador inválido!");
             operador_valido = false; 
-            continua = prompt ("Digite sim para continuar e não para encerrar");
+            continua = prompt (
+                "Digite sim para continuar e não para encerrar");
+
             if (continua === "não") {
-
                 return //return força a parada de uma função
-
-            } 
-            
-    
+            }  
         }
 
-        if (operador != "/" || operando2 != 0) {
+        
+        if ( (operador != "/" || operando2 != 0) && operador_valido != false) {
             alert("Resultado: " +
                 operando1 + 
                 " " + 
@@ -57,8 +51,8 @@ function calculadora() {
                 operando2 + 
                 " = " + 
                 resultado);
-
         }
-        // o símbolo || significa "ou" 
+        
+        // o símbolo || significa "ou" e $$ significa "e" 
     }
 } 
