@@ -11,6 +11,50 @@ function urna() {
     let voto;
 
     do{
-        
-    } while (voto != 0);
+        voto = prompt("Escolha seu candidato ou tecle zero para encerrar.\n " +
+            "  1 -> Candidato A\n " +
+            "  2 -> Candidato B\n " +
+            "  3 -> Branco\n " +
+            "\nQualquer número diferente de 0, 1, 2 e 3 anulará seu voto.\n" +
+            "Digite seu voto: ");
+
+        if (voto == "0"){
+            alert("Votação encerrada!");      
+        } else if (voto == "1"){
+            //candidato_a = candidato_a + 1;
+            //candidato_a++;
+            ++candidato_a;
+            alert("Voto registrado!");
+        } else if (voto == "2"){
+            ++candidato_b;
+            alert("Voto registrado!");
+        } else if (voto == "3"){
+            ++brancos;
+            alert("Voto registrado!");
+        } else{
+            ++nulos;
+            alert("Voto anulado!");
+        }
+    }while(voto != 0);
+
+    total = candidato_a + candidato_b + brancos + nulos
+
+    if (total > 0) {
+        porcent_cand_a = (candidato_a * 100) / total;
+        porcent_cand_b = (candidato_b * 100) / total;
+        porcent_brancos = (brancos * 100) / total;
+        porcent_nulos = (nulos * 100) / total;
+
+        alert("Total de votos: " + total + "\n" +
+            "Candidato A: " + candidato_a + " voto(s). " + 
+                porcent_cand_a + "% do total.\n" +
+            "Candidato B: " + candidato_b + " voto(s). " + 
+                porcent_cand_b + "% do total.\n" +
+            "Brancos: " + brancos + " voto(s). " + 
+                porcent_brancos + "% do total.\n" +
+            "Nulos: " + nulos + " voto(s). " + 
+                porcent_nulos + "% do total."
+        );
+
+    }
 }
