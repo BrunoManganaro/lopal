@@ -46,7 +46,7 @@ let moduloLunar = {
 //Visualização
 function mostrarVelocidadeVertical(){
     mostrarIndicador(
-        `Velocidade Vertical: ${(10 * moduloLunar.velocidade.y ).toFixed(2)}`,
+        `Velocidade Vertical: ${(10 * moduloLunar.velocidade.y ).toFixed(2)}m/s`,
         50,
         40
     );
@@ -65,7 +65,7 @@ function mostrarIndicador(mensagem, x, y){
     contexto.font = "bold 18px Arial";
     contexto.textAlign = "left";
     contexto.textBaseline = "middle";
-    contexto.fillStyle = "lightgray";
+    contexto.fillStyle = "lightgreen";
     contexto.fillText(
         mensagem,
         x,
@@ -84,7 +84,7 @@ function mostrarAltitude(){
  
 function mostrarVelocidadeHorizontal(){
     mostrarIndicador(
-        `Velocidade Horizontal: ${(10 * moduloLunar.velocidade.x).toFixed(2)}`,
+        `Velocidade Horizontal: ${(10 * moduloLunar.velocidade.x).toFixed(2)}m/s`,
         50,
         60
     );
